@@ -12,9 +12,10 @@ int Sniper = 3;
 int Machine_gun = 4;
 int RailGun = 5;
 int Rocket_Luncher = 6;
+int nogun = 0;
 int simga = 1; 
-int textrizzsetX = 60; 
-int textrizzsetY = 60; 
+
+
 final int Start_Screen = 0;
 final int CharacterSelectionScreen = 1;
 int SelectedScreen;
@@ -74,13 +75,15 @@ void draw() {
 }
 void mousePressed() {
 
-  IfmousePressed(100,300,600,800,CharacterSelectionScreen,Pistol); //this Reads the mouse X and Y pos and Changes the Screen State, Values You gave is MinX MaxX MinY MaxY and wanted Screen stage
-  IfmousePressed(400,600,600,800,CharacterSelectionScreen,Shotgun);
-  IfmousePressed(700,900,600,800,CharacterSelectionScreen,Sniper);
-  IfmousePressed(1000,1200,600,800,CharacterSelectionScreen,Machine_gun);
-  IfmousePressed(1300,1500,600,800,CharacterSelectionScreen,RailGun);
-  IfmousePressed(1600,1800,600,800,CharacterSelectionScreen,Rocket_Luncher);
- 
+  IfmousePressed(150,250,650,750,CharacterSelectionScreen,Pistol); //this Reads the mouse X and Y pos and Changes the Screen State, Values You gave is MinX MaxX MinY MaxY and wanted Screen stage
+  IfmousePressed(450,550,650,750,CharacterSelectionScreen,Shotgun);
+  IfmousePressed(750,850,650,750,CharacterSelectionScreen,Sniper);
+  IfmousePressed(1050,1150,650,750,CharacterSelectionScreen,Machine_gun);
+  IfmousePressed(1350,1450,650,750,CharacterSelectionScreen,RailGun);
+  IfmousePressed(1650,1750,650,750,CharacterSelectionScreen,Rocket_Luncher);
+  IfmousePressed(10, 110 , 10, 30,Start_Screen,nogun);
+  
+
   
 
 }
