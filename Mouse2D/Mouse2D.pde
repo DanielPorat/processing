@@ -5,9 +5,17 @@
  */
  int TextOfset = 35; //how much I got to minus text to make it centered  
 int ScreenChoice = 0;
+int choosengun = 0;
+int Pistol = 1;
+int Shotgun = 2;
+int Sniper = 3;
+int Machine_gun = 4;
+int RailGun = 5;
+int Rocket_Luncher = 6;
 int simga = 1; 
 final int Start_Screen = 0;
 final int CharacterSelectionScreen = 1;
+int SelectedScreen;
 void setup() {
   fullScreen();//making it full screen
   noStroke();
@@ -51,7 +59,19 @@ void draw() {
   text(mouseY, 200, 200);
 }
 void mousePressed() {
-  if(mouseX > 100 && mouseX < 300 && (mouseY > 600 && mouseY < 800)){
-    ScreenChoice = CharacterSelectionScreen; 
+
+  IfmousePressed(100,300,600,800,CharacterSelectionScreen,Pistol); //this Reads the mouse X and Y pos and Changes the Screen State, Values You gave is MinX MaxX MinY MaxY and wanted Screen stage
+  IfmousePressed(400,600,600,800,CharacterSelectionScreen,Shotgun);
+  IfmousePressed(700,900,600,800,CharacterSelectionScreen,Sniper);
+  IfmousePressed(1000,1200,600,800,CharacterSelectionScreen,Machine_gun);
+  IfmousePressed(1300,1500,600,800,CharacterSelectionScreen,RailGun);
+  IfmousePressed(1600,1800,600,800,CharacterSelectionScreen,Rocket_Luncher);
+}
+void IfmousePressed(int MinX,int MaxX,int MinY, int MaxY,int screenStage,int gun) { //It takes 5 values 
+  if(mouseX > MinX && mouseX < MaxX && (mouseY > MinY && mouseY < MaxY)) {
+    ScreenChoice = screenStage; 
+    choosengun = gun;
   }
+  
+
 }
