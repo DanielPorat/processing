@@ -12,7 +12,10 @@ int Sniper = 3;
 int Machine_gun = 4;
 int RailGun = 5;
 int Rocket_Luncher = 6;
+int nogun = 0;
 int simga = 1; 
+
+
 final int Start_Screen = 0;
 final int CharacterSelectionScreen = 1;
 int SelectedScreen;
@@ -27,6 +30,7 @@ void setup() {
 void draw() {
   background(51);
   //Creating weapon boxes
+
   if(ScreenChoice == Start_Screen) {
     fill(100,255,255); //setting the color of the boxes
     rect(200, 700, 100, 100);  // X Y, size
@@ -35,6 +39,8 @@ void draw() {
     rect(1100, 700, 100, 100);
     rect(1400, 700, 100, 100);
     rect(1700, 700, 100, 100);
+   
+
     //stops weapon boxes
   
     //Creating Text for weapon boxes
@@ -45,11 +51,20 @@ void draw() {
     text("Machine gun",1100-TextOfset,700);
     text("RailGun",1400-TextOfset,700);
     text("Rocket Luncher",1700-TextOfset,700);
+   
   //text();
   //text();
   }
   if(ScreenChoice == CharacterSelectionScreen) {
+    
      background(51);
+     fill(255,100,100);
+     rect(60, 20, 100, 20);
+      fill(100,255,255);
+      text("Back",45,23);
+     
+       
+       
   }
 
 
@@ -60,17 +75,23 @@ void draw() {
 }
 void mousePressed() {
 
-  IfmousePressed(100,300,600,800,CharacterSelectionScreen,Pistol); //this Reads the mouse X and Y pos and Changes the Screen State, Values You gave is MinX MaxX MinY MaxY and wanted Screen stage
-  IfmousePressed(400,600,600,800,CharacterSelectionScreen,Shotgun);
-  IfmousePressed(700,900,600,800,CharacterSelectionScreen,Sniper);
-  IfmousePressed(1000,1200,600,800,CharacterSelectionScreen,Machine_gun);
-  IfmousePressed(1300,1500,600,800,CharacterSelectionScreen,RailGun);
-  IfmousePressed(1600,1800,600,800,CharacterSelectionScreen,Rocket_Luncher);
+  IfmousePressed(150,250,650,750,CharacterSelectionScreen,Pistol); //this Reads the mouse X and Y pos and Changes the Screen State, Values You gave is MinX MaxX MinY MaxY and wanted Screen stage
+  IfmousePressed(450,550,650,750,CharacterSelectionScreen,Shotgun);
+  IfmousePressed(750,850,650,750,CharacterSelectionScreen,Sniper);
+  IfmousePressed(1050,1150,650,750,CharacterSelectionScreen,Machine_gun);
+  IfmousePressed(1350,1450,650,750,CharacterSelectionScreen,RailGun);
+  IfmousePressed(1650,1750,650,750,CharacterSelectionScreen,Rocket_Luncher);
+  IfmousePressed(10, 110 , 10, 30,Start_Screen,nogun);
+  
+
+  
+
 }
 void IfmousePressed(int MinX,int MaxX,int MinY, int MaxY,int screenStage,int gun) { //It takes 5 values 
   if(mouseX > MinX && mouseX < MaxX && (mouseY > MinY && mouseY < MaxY)) {
     ScreenChoice = screenStage; 
     choosengun = gun;
+    
   }
   
 
