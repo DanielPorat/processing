@@ -12,6 +12,7 @@ int Sniper = 3;
 int Machine_gun = 4;
 int RailGun = 5;
 int Rocket_Luncher = 6;
+int simga = 1; 
 final int Start_Screen = 0;
 final int CharacterSelectionScreen = 1;
 int SelectedScreen;
