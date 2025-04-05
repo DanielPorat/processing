@@ -6,6 +6,7 @@
  int TextOfset = 35; //how much I got to minus text to make it centered  
 int ScreenChoice = 0;
 final int Start_Screen = 0;
+final int CharacterSelectionScreen = 1;
 void setup() {
   fullScreen();//making it full screen
   noStroke();
@@ -32,11 +33,14 @@ void draw() {
     text("Pistol",200-TextOfset,700);
     text("Shotgun",500-TextOfset,700);
     text("Sniper",800-TextOfset,700);
-     text("Machine gun",1100-TextOfset,700);
+    text("Machine gun",1100-TextOfset,700);
     text("RailGun",1400-TextOfset,700);
     text("Rocket Luncher",1700-TextOfset,700);
   //text();
   //text();
+  }
+  if(ScreenChoice == CharacterSelectionScreen) {
+     background(51);
   }
 
 
@@ -46,4 +50,7 @@ void draw() {
   text(mouseY, 200, 200);
 }
 void mousePressed() {
+  if(mouseX > 100 && mouseX < 300 && (mouseY > 600 && mouseY < 800)){
+    ScreenChoice = CharacterSelectionScreen; 
+  }
 }
