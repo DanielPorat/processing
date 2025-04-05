@@ -5,6 +5,7 @@
  */
  int TextOfset = 35; //how much I got to minus text to make it centered  
 int ScreenChoice = 0;
+int simga = 1; 
 final int Start_Screen = 0;
 void setup() {
   fullScreen();//making it full screen
