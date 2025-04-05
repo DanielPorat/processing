@@ -13,6 +13,8 @@ int Machine_gun = 4;
 int RailGun = 5;
 int Rocket_Luncher = 6;
 int simga = 1; 
+int textrizzsetX = 60; 
+int textrizzsetY = 60; 
 final int Start_Screen = 0;
 final int CharacterSelectionScreen = 1;
 int SelectedScreen;
@@ -27,6 +29,7 @@ void setup() {
 void draw() {
   background(51);
   //Creating weapon boxes
+
   if(ScreenChoice == Start_Screen) {
     fill(100,255,255); //setting the color of the boxes
     rect(200, 700, 100, 100);  // X Y, size
@@ -35,6 +38,8 @@ void draw() {
     rect(1100, 700, 100, 100);
     rect(1400, 700, 100, 100);
     rect(1700, 700, 100, 100);
+   
+
     //stops weapon boxes
   
     //Creating Text for weapon boxes
@@ -45,11 +50,20 @@ void draw() {
     text("Machine gun",1100-TextOfset,700);
     text("RailGun",1400-TextOfset,700);
     text("Rocket Luncher",1700-TextOfset,700);
+   
   //text();
   //text();
   }
   if(ScreenChoice == CharacterSelectionScreen) {
+    
      background(51);
+     fill(255,100,100);
+     rect(60, 20, 100, 20);
+      fill(100,255,255);
+      text("Back",45,23);
+     
+       
+       
   }
 
 
@@ -66,11 +80,15 @@ void mousePressed() {
   IfmousePressed(1000,1200,600,800,CharacterSelectionScreen,Machine_gun);
   IfmousePressed(1300,1500,600,800,CharacterSelectionScreen,RailGun);
   IfmousePressed(1600,1800,600,800,CharacterSelectionScreen,Rocket_Luncher);
+ 
+  
+
 }
 void IfmousePressed(int MinX,int MaxX,int MinY, int MaxY,int screenStage,int gun) { //It takes 5 values 
   if(mouseX > MinX && mouseX < MaxX && (mouseY > MinY && mouseY < MaxY)) {
     ScreenChoice = screenStage; 
     choosengun = gun;
+    
   }
   
 
