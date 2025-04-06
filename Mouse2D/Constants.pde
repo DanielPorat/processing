@@ -1,3 +1,9 @@
+ int Warrior = 0;
+ int Wizard = 1;
+ int King = 2;
+ int DarkOverLord = 3;
+ int Elf = 4;
+ int Assassin = 5;
 
 int choosengunId = 0;
 int choosengunDamage = 0;
@@ -34,3 +40,8 @@ int Rocket_LauncherId = 6;
 int Rocket_LauncherDamage = 50;
 int Rocket_LauncherRange = 200;
 String Rocket_LauncherGunName = "Rocket_Launcher";
+
+
+final int Start_Screen = 0;
+final int CharacterSelectionScreen = 1;
+final int GameScreen = 2;

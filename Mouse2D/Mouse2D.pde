@@ -5,12 +5,7 @@
  */
  //Characters 
  int CharacterType = 0;
- int Warrior = 0;
- int Wizard = 1;
- int King = 2;
- int DarkOverLord = 3;
- int Elf = 4;
- int Assassin = 5;
+
 
  
  int TextOfset = 35; //how much I got to minus text to make it centered  
@@ -24,9 +19,7 @@ CharacterClass MainCharacter;
 Weapons NewWeapons;
 
 
-final int Start_Screen = 0;
-final int CharacterSelectionScreen = 1;
-final int GameScreen = 2;
+
 int SelectedScreen;
 void setup() {
  
@@ -57,12 +50,12 @@ void draw() {
 }
 void GameScreen() {
    if(ScreenChoice == GameScreen) {
+  
      NewWeapons = new Weapons(choosengunDamage,choosengunName, choosengunRange, choosengunId);
      NewWeapons.PickWeapon(choosengunId);
-     choosengunDamage = NewWeapons.Damage;
-     choosengunName = NewWeapons.Name;
-     choosengunRange =  NewWeapons.Range;
-    choosengunId =  NewWeapons.ID;
+
+
+    
      text(NewWeapons.Name,100,100);
      MainCharacter.keyPressed();
      MainCharacter.displayWarrior();
