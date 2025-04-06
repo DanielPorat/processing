@@ -74,3 +74,6 @@ String Rocket_LauncherGunName = "Rocket_Launcher";
 final int Start_Screen = 0;
 final int CharacterSelectionScreen = 1;
 final int GameScreen = 2;
+int Level = 0;
+final int FirstLevel = 1;
+final int SecondLevel = 2;

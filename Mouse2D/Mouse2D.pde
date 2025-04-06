@@ -17,7 +17,7 @@ int simga = 1;
  int Timer = 0;
 CharacterClass MainCharacter;
 Weapons NewWeapons;
-
+EnemyClass Enemies;
 
 
 int SelectedScreen;
@@ -29,7 +29,8 @@ void setup() {
   rectMode(CENTER);
   textMode(CENTER);
   background(51);
-  MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName); 
+  MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName);
+  Enemies = new EnemyClass(10);
   
 }
 
@@ -54,7 +55,10 @@ void GameScreen() {
    if(ScreenChoice == GameScreen) {
   
      NewWeapons.PickWeapon(choosengunId);
-     
+     if(Level == FirstLevel) {
+     Enemies.SpawnEnemies(1,10);
+     Level = SecondLevel;
+     }
      
  
      MainCharacter.display();
@@ -64,10 +68,13 @@ void GameScreen() {
      text(NewWeapons.Name,100,100);
      text(MainCharacter.X,500,500);
      text(MainCharacter.Y,700,700);
+     Enemies.ReDraw();
    }
    else{
       MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName); 
      NewWeapons = new Weapons(choosengunDamage,choosengunName, choosengunRange, choosengunId);
+      Enemies = new EnemyClass(10);
+     
    }
 }
 void CharacterSelectionScreen() {

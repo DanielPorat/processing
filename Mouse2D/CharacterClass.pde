@@ -12,11 +12,18 @@ class CharacterClass{
   void setup() {
    MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName);
   }
+  //public float getX() {
+  //  return(X);
+  //}
+  //public float getY() {
+  //  return(Y);
+  //}
   void display() {
     if(MainCharacter.Name == WizardName) {
       displayWizard();
       choosenSpeed = WizardSpeed;
       choosenCharacterName = WizardName;
+      
   }
   else if(MainCharacter.Name == WarriorName) {
       displayWarrior();
@@ -97,10 +104,12 @@ class CharacterClass{
     ellipse(X,Y,64,64); 
     rect(X,Y+75,200,200);
   }
+
   void keyPressed() {
     if(keyCode == LEFT){
        if(X >= 20) {
          X -= choosenSpeed;
+        
        }
     }
     else if(keyCode == DOWN) {
