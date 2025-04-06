@@ -1,14 +1,14 @@
 
-
-
 class CharacterClass{
   float X;
   float Y;
   float Speed = 20;
+
   void setup() {
    MainCharacter = new CharacterClass();
   }
   void displayWarrior() {
+    
     stroke(0);
     fill(127);
     ellipse(X,Y,64,64);  
