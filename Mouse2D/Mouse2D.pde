@@ -15,16 +15,20 @@ int Rocket_Luncher = 6;
 int nogun = 0;
 int simga = 1; 
 
+CharacterClass MainCharacter;
+
 
 final int Start_Screen = 0;
 final int CharacterSelectionScreen = 1;
 int SelectedScreen;
 void setup() {
+  MainCharacter = new CharacterClass(); 
   fullScreen();//making it full screen
   noStroke();
   rectMode(CENTER);
   textMode(CENTER);
   background(51);
+  
 }
 
 void draw() {
@@ -39,7 +43,9 @@ void draw() {
     rect(1100, 700, 100, 100);
     rect(1400, 700, 100, 100);
     rect(1700, 700, 100, 100);
-   
+     MainCharacter.keyPressed();
+    MainCharacter.display();
+  
 
     //stops weapon boxes
   
@@ -91,8 +97,11 @@ void IfmousePressed(int MinX,int MaxX,int MinY, int MaxY,int screenStage,int gun
   if(mouseX > MinX && mouseX < MaxX && (mouseY > MinY && mouseY < MaxY)) {
     ScreenChoice = screenStage; 
     choosengun = gun;
-    
-  }
+    }
+}
+
+
+
   
 
-}
+  
