@@ -111,6 +111,13 @@ void Start_screen() {
 }
 void mousePressed() {
 
+    IfmousePressed(150,250,650,750,GameScreen,choosengun,CharacterSelectionScreen); //this Reads the mouse X and Y pos and Changes the Screen State, Values You gave is MinX MaxX MinY MaxY and wanted Screen stage
+  IfmousePressed(450,550,650,750,GameScreen,choosengun,CharacterSelectionScreen);
+  IfmousePressed(750,850,650,750,GameScreen,choosengun,CharacterSelectionScreen);
+  IfmousePressed(1050,1150,650,750,GameScreen,choosengun,CharacterSelectionScreen);
+  IfmousePressed(1350,1450,650,750,GameScreen,choosengun,CharacterSelectionScreen);
+  IfmousePressed(1650,1750,650,750,GameScreen,choosengun,CharacterSelectionScreen);
+  
   IfmousePressed(150,250,650,750,CharacterSelectionScreen,Pistol,Start_Screen); //this Reads the mouse X and Y pos and Changes the Screen State, Values You gave is MinX MaxX MinY MaxY and wanted Screen stage
   IfmousePressed(450,550,650,750,CharacterSelectionScreen,Shotgun,Start_Screen);
   IfmousePressed(750,850,650,750,CharacterSelectionScreen,Sniper,Start_Screen);
@@ -120,12 +127,7 @@ void mousePressed() {
   IfmousePressed(10, 110 , 10, 30,Start_Screen,nogun,CharacterSelectionScreen);
   
 
-  IfmousePressed(150,250,650,750,GameScreen,choosengun,CharacterSelectionScreen); //this Reads the mouse X and Y pos and Changes the Screen State, Values You gave is MinX MaxX MinY MaxY and wanted Screen stage
-  IfmousePressed(450,550,650,750,GameScreen,choosengun,CharacterSelectionScreen);
-  IfmousePressed(750,850,650,750,GameScreen,choosengun,CharacterSelectionScreen);
-  IfmousePressed(1050,1150,650,750,GameScreen,choosengun,CharacterSelectionScreen);
-  IfmousePressed(1350,1450,650,750,GameScreen,choosengun,CharacterSelectionScreen);
-  IfmousePressed(1650,1750,650,750,GameScreen,choosengun,CharacterSelectionScreen);
+
 
   
 
