@@ -1,10 +1,38 @@
- int Warrior = 0;
- int Wizard = 1;
- int King = 2;
- int DarkOverLord = 3;
- int Elf = 4;
- int Assassin = 5;
+//*********************CHARCTER CONSTANTS*********************
+int Warrior = 0;
+int WarriorSpeed = 5;
+String WarriorName = "Warrior";
 
+int Wizard = 1;
+int WizardSpeed = 2;
+String WizardName = "Wizard";
+
+int King = 2;
+int KingSpeed = 4;
+String KingName = "King";
+
+int DarkOverLord = 3;
+int DarkOverLordSpeed = 10;
+String DarkOverLordName = "DarkOverLord";
+
+int Elf = 4;
+int ElfSpeed = 11;
+String ElfName = "Elf";
+
+int Assassin = 5;
+int AssassinSpeed = 20;
+String AssassinName = "Assassin";
+
+int StartingDefualtX = 500;
+int StartingDefualtY = 250;
+
+int DefultSpeed = 5;
+
+int choosenSpeed = 4;
+String choosenCharacterName = "";
+
+
+//****************************************WEAPON CONSTANTS************************************************
 int choosengunId = 0;
 int choosengunDamage = 0;
 int choosengunRange = 0;
@@ -41,6 +69,7 @@ int Rocket_LauncherDamage = 50;
 int Rocket_LauncherRange = 200;
 String Rocket_LauncherGunName = "Rocket_Launcher";
 
+//************************************MISC CONSTANTS ***********************************
 
 final int Start_Screen = 0;
 final int CharacterSelectionScreen = 1;

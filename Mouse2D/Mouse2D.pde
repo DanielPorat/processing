@@ -4,7 +4,7 @@
  * Moving the mouse changes the position and size of each box.
  */
  //Characters 
- int CharacterType = 0;
+ 
 
 
  
@@ -23,12 +23,13 @@ Weapons NewWeapons;
 int SelectedScreen;
 void setup() {
  
-  MainCharacter = new CharacterClass(); 
+ 
   fullScreen();//making it full screen
   noStroke();
   rectMode(CENTER);
   textMode(CENTER);
   background(51);
+  MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName); 
   
 }
 
@@ -40,7 +41,7 @@ void draw() {
   Start_screen();
   CharacterSelectionScreen();
   GameScreen();
-
+   
 
 
 
@@ -49,16 +50,24 @@ void draw() {
   text(mouseY, 200, 200);
 }
 void GameScreen() {
+  
    if(ScreenChoice == GameScreen) {
   
-     NewWeapons = new Weapons(choosengunDamage,choosengunName, choosengunRange, choosengunId);
      NewWeapons.PickWeapon(choosengunId);
-
-
+     
+     
+ 
+     MainCharacter.display();
+     MainCharacter.keyPressed();
+   
     
      text(NewWeapons.Name,100,100);
-     MainCharacter.keyPressed();
-     MainCharacter.displayWarrior();
+     text(MainCharacter.X,500,500);
+     text(MainCharacter.Y,700,700);
+   }
+   else{
+      MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName); 
+     NewWeapons = new Weapons(choosengunDamage,choosengunName, choosengunRange, choosengunId);
    }
 }
 void CharacterSelectionScreen() {
@@ -121,21 +130,21 @@ void Start_screen() {
 }
 void mousePressed() {
 
-   IfmousePressed(150,250,650,750,GameScreen,PistolId,CharacterSelectionScreen,CharacterType); //this Reads the mouse X and Y pos and Changes the Screen State, Values You gave is MinX MaxX MinY MaxY and wanted Screen stage
-  IfmousePressed(450,550,650,750,GameScreen,ShotgunId,CharacterSelectionScreen,CharacterType);
-  IfmousePressed(750,850,650,750,GameScreen,SniperId,CharacterSelectionScreen,CharacterType);
-  IfmousePressed(1050,1150,650,750,GameScreen,Machine_gunId,CharacterSelectionScreen,CharacterType);
-  IfmousePressed(1350,1450,650,750,GameScreen,RailGunId,CharacterSelectionScreen,CharacterType);
-  IfmousePressed(1650,1750,650,750,GameScreen,Rocket_LauncherId,CharacterSelectionScreen,CharacterType);
+   IfmousePressed(150,250,650,750,GameScreen,PistolId,CharacterSelectionScreen,choosenCharacterName); //this Reads the mouse X and Y pos and Changes the Screen State, Values You gave is MinX MaxX MinY MaxY and wanted Screen stage
+  IfmousePressed(450,550,650,750,GameScreen,ShotgunId,CharacterSelectionScreen,choosenCharacterName);
+  IfmousePressed(750,850,650,750,GameScreen,SniperId,CharacterSelectionScreen,choosenCharacterName);
+  IfmousePressed(1050,1150,650,750,GameScreen,Machine_gunId,CharacterSelectionScreen,choosenCharacterName);
+  IfmousePressed(1350,1450,650,750,GameScreen,RailGunId,CharacterSelectionScreen,choosenCharacterName);
+  IfmousePressed(1650,1750,650,750,GameScreen,Rocket_LauncherId,CharacterSelectionScreen,choosenCharacterName);
   
-  IfmousePressed(150,250,650,750,CharacterSelectionScreen,choosengunId,Start_Screen,Warrior); //this Reads the mouse X and Y pos and Changes the Screen State, Values You gave is MinX MaxX MinY MaxY and wanted Screen stage
-  IfmousePressed(450,550,650,750,CharacterSelectionScreen,choosengunId,Start_Screen,Wizard);
-  IfmousePressed(750,850,650,750,CharacterSelectionScreen,choosengunId,Start_Screen,King);
-  IfmousePressed(1050,1150,650,750,CharacterSelectionScreen,choosengunId,Start_Screen,DarkOverLord);
-  IfmousePressed(1350,1450,650,750,CharacterSelectionScreen,choosengunId,Start_Screen,Elf);
-  IfmousePressed(1650,1750,650,750,CharacterSelectionScreen,choosengunId,Start_Screen,Assassin);
+  IfmousePressed(150,250,650,750,CharacterSelectionScreen,choosengunId,Start_Screen,WarriorName); //this Reads the mouse X and Y pos and Changes the Screen State, Values You gave is MinX MaxX MinY MaxY and wanted Screen stage
+  IfmousePressed(450,550,650,750,CharacterSelectionScreen,choosengunId,Start_Screen,WizardName);
+  IfmousePressed(750,850,650,750,CharacterSelectionScreen,choosengunId,Start_Screen,KingName);
+  IfmousePressed(1050,1150,650,750,CharacterSelectionScreen,choosengunId,Start_Screen,DarkOverLordName);
+  IfmousePressed(1350,1450,650,750,CharacterSelectionScreen,choosengunId,Start_Screen,ElfName);
+  IfmousePressed(1650,1750,650,750,CharacterSelectionScreen,choosengunId,Start_Screen,AssassinName);
   
-  IfmousePressed(10, 110 , 10, 30,Start_Screen,nogun,CharacterSelectionScreen,CharacterType);
+  IfmousePressed(10, 110 , 10, 30,Start_Screen,nogun,CharacterSelectionScreen,choosenCharacterName);
   
 
 
@@ -143,12 +152,12 @@ void mousePressed() {
   
 
 }
-void IfmousePressed(int MinX,int MaxX,int MinY, int MaxY,int screenStage,int gunId,int LimitStage,int ChoosenCharacterType) { //It takes 5 values  //Limit stage is what stage it works on
+void IfmousePressed(int MinX,int MaxX,int MinY, int MaxY,int screenStage,int gunId,int LimitStage,String CharacterName) { //It takes 5 values  //Limit stage is what stage it works on
 
   if(mouseX > MinX && mouseX < MaxX && (mouseY > MinY && mouseY < MaxY) && (LimitStage == ScreenChoice)) {
     ScreenChoice = screenStage; 
     choosengunId = gunId;
-    CharacterType = ChoosenCharacterType; 
+    choosenCharacterName = CharacterName; 
     
     }
 }
