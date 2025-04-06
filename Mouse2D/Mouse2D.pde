@@ -3,6 +3,16 @@
  *
  * Moving the mouse changes the position and size of each box.
  */
+ //Characters 
+ int CharacterType = 0;
+ int Warrior = 0;
+ int Wizard = 1;
+ int King = 2;
+ int DarkOverLord = 3;
+ int Elf = 4;
+ int Assassin = 5;
+
+ 
  int TextOfset = 35; //how much I got to minus text to make it centered  
 int ScreenChoice = 0;
 int choosengun = 0;
@@ -16,6 +26,7 @@ int nogun = 0;
 int simga = 1; 
  int Timer = 0;
 CharacterClass MainCharacter;
+
 
 
 final int Start_Screen = 0;
@@ -111,20 +122,21 @@ void Start_screen() {
 }
 void mousePressed() {
 
-    IfmousePressed(150,250,650,750,GameScreen,choosengun,CharacterSelectionScreen); //this Reads the mouse X and Y pos and Changes the Screen State, Values You gave is MinX MaxX MinY MaxY and wanted Screen stage
-  IfmousePressed(450,550,650,750,GameScreen,choosengun,CharacterSelectionScreen);
-  IfmousePressed(750,850,650,750,GameScreen,choosengun,CharacterSelectionScreen);
-  IfmousePressed(1050,1150,650,750,GameScreen,choosengun,CharacterSelectionScreen);
-  IfmousePressed(1350,1450,650,750,GameScreen,choosengun,CharacterSelectionScreen);
-  IfmousePressed(1650,1750,650,750,GameScreen,choosengun,CharacterSelectionScreen);
+   IfmousePressed(150,250,650,750,GameScreen,choosengun,CharacterSelectionScreen,CharacterType); //this Reads the mouse X and Y pos and Changes the Screen State, Values You gave is MinX MaxX MinY MaxY and wanted Screen stage
+  IfmousePressed(450,550,650,750,GameScreen,choosengun,CharacterSelectionScreen,CharacterType);
+  IfmousePressed(750,850,650,750,GameScreen,choosengun,CharacterSelectionScreen,CharacterType);
+  IfmousePressed(1050,1150,650,750,GameScreen,choosengun,CharacterSelectionScreen,CharacterType);
+  IfmousePressed(1350,1450,650,750,GameScreen,choosengun,CharacterSelectionScreen,CharacterType);
+  IfmousePressed(1650,1750,650,750,GameScreen,choosengun,CharacterSelectionScreen,CharacterType);
   
-  IfmousePressed(150,250,650,750,CharacterSelectionScreen,Pistol,Start_Screen); //this Reads the mouse X and Y pos and Changes the Screen State, Values You gave is MinX MaxX MinY MaxY and wanted Screen stage
-  IfmousePressed(450,550,650,750,CharacterSelectionScreen,Shotgun,Start_Screen);
-  IfmousePressed(750,850,650,750,CharacterSelectionScreen,Sniper,Start_Screen);
-  IfmousePressed(1050,1150,650,750,CharacterSelectionScreen,Machine_gun,Start_Screen);
-  IfmousePressed(1350,1450,650,750,CharacterSelectionScreen,RailGun,Start_Screen);
-  IfmousePressed(1650,1750,650,750,CharacterSelectionScreen,Rocket_Luncher,Start_Screen);
-  IfmousePressed(10, 110 , 10, 30,Start_Screen,nogun,CharacterSelectionScreen);
+  IfmousePressed(150,250,650,750,CharacterSelectionScreen,Pistol,Start_Screen,Warrior); //this Reads the mouse X and Y pos and Changes the Screen State, Values You gave is MinX MaxX MinY MaxY and wanted Screen stage
+  IfmousePressed(450,550,650,750,CharacterSelectionScreen,Shotgun,Start_Screen,Wizard);
+  IfmousePressed(750,850,650,750,CharacterSelectionScreen,Sniper,Start_Screen,King);
+  IfmousePressed(1050,1150,650,750,CharacterSelectionScreen,Machine_gun,Start_Screen,DarkOverLord);
+  IfmousePressed(1350,1450,650,750,CharacterSelectionScreen,RailGun,Start_Screen,Elf);
+  IfmousePressed(1650,1750,650,750,CharacterSelectionScreen,Rocket_Luncher,Start_Screen,Assassin);
+  
+  IfmousePressed(10, 110 , 10, 30,Start_Screen,nogun,CharacterSelectionScreen,CharacterType);
   
 
 
@@ -132,11 +144,12 @@ void mousePressed() {
   
 
 }
-void IfmousePressed(int MinX,int MaxX,int MinY, int MaxY,int screenStage,int gun,int LimitStage) { //It takes 5 values  //Limit stage is what stage it works on
+void IfmousePressed(int MinX,int MaxX,int MinY, int MaxY,int screenStage,int gun,int LimitStage,int ChoosenCharacterType) { //It takes 5 values  //Limit stage is what stage it works on
 
   if(mouseX > MinX && mouseX < MaxX && (mouseY > MinY && mouseY < MaxY) && (LimitStage == ScreenChoice)) {
     ScreenChoice = screenStage; 
     choosengun = gun;
+    CharacterType = ChoosenCharacterType; 
     
     }
 }
