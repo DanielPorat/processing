@@ -44,7 +44,7 @@ void draw() {
     rect(1400, 700, 100, 100);
     rect(1700, 700, 100, 100);
      MainCharacter.keyPressed();
-    MainCharacter.display();
+    MainCharacter.displayWarrior();
   
 
     //stops weapon boxes
@@ -56,7 +56,7 @@ void draw() {
     text("Sniper",800-TextOfset,700);
     text("Machine gun",1100-TextOfset,700);
     text("RailGun",1400-TextOfset,700);
-    text("Rocket Luncher",1700-TextOfset,700);
+    text("Rocket launcher",1700-TextOfset,700);
    
   //text();
   //text();
