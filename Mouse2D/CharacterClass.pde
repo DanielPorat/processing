@@ -14,6 +14,14 @@ class CharacterClass{
     ellipse(X,Y,64,64);  
     rect(X,Y+75,100,100);
   }
+    void displayKing() {
+    stroke(0);
+    fill(127);
+    ellipse(X,Y,64,64);
+    ellipse(X,Y,11,64); 
+    ellipse(X,Y,64,64); 
+    rect(X,Y+75,100,100);
+  }
   void keyPressed() {
     if(keyCode == LEFT){
        if(X >= 20) {
@@ -22,7 +30,7 @@ class CharacterClass{
     }
     else if(keyCode == DOWN) {
       
-       if(Y <= 1099) {
+       if(Y <= 1000) {
           Y += Speed; 
        }
 } 
