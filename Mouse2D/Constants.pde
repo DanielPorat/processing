@@ -69,6 +69,7 @@ int Rocket_LauncherDamage = 50;
 int Rocket_LauncherRange = 200;
 String Rocket_LauncherGunName = "Rocket_Launcher";
 
+
 //************************************MISC CONSTANTS ***********************************
 
 final int Start_Screen = 0;
@@ -77,3 +78,4 @@ final int GameScreen = 2;
 int Level = 0;
 final int FirstLevel = 1;
 final int SecondLevel = 2;
+boolean enemiesSpawned = false;

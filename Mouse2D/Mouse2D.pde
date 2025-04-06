@@ -55,11 +55,12 @@ void GameScreen() {
    if(ScreenChoice == GameScreen) {
   
      NewWeapons.PickWeapon(choosengunId);
-     if(Level == FirstLevel) {
-     Enemies.SpawnEnemies(1,10);
-     Level = SecondLevel;
-     }
-     
+        if (!enemiesSpawned) {
+      Enemies.SpawnEnemies(1, 10);
+      enemiesSpawned = true; 
+    }
+     Enemies.ReDraw();
+     Enemies.Movement(MainCharacter.X,MainCharacter.Y);
  
      MainCharacter.display();
      MainCharacter.keyPressed();
@@ -68,12 +69,13 @@ void GameScreen() {
      text(NewWeapons.Name,100,100);
      text(MainCharacter.X,500,500);
      text(MainCharacter.Y,700,700);
-     Enemies.ReDraw();
+    
    }
    else{
       MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName); 
      NewWeapons = new Weapons(choosengunDamage,choosengunName, choosengunRange, choosengunId);
-      Enemies = new EnemyClass(10);
+      Enemies = new EnemyClass(4);
+      enemiesSpawned = false;
      
    }
 }
