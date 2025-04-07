@@ -30,7 +30,7 @@ void setup() {
   textMode(CENTER);
   background(51);
   MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName);
-  Enemies = new EnemyClass(10);
+  Enemies = new EnemyClass(1);
   
 }
 
@@ -74,7 +74,7 @@ void GameScreen() {
    else{
       MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName); 
      NewWeapons = new Weapons(choosengunDamage,choosengunName, choosengunRange, choosengunId);
-      Enemies = new EnemyClass(4);
+      Enemies = new EnemyClass(5);
       enemiesSpawned = false;
      
    }
@@ -132,7 +132,7 @@ void Start_screen() {
     text("Machine gun",1100-TextOfset,700);
     text("RailGun",1400-TextOfset,700);
     text("Rocket launcher",1700-TextOfset,700);
-   
+     enemiesSpawned = false; 
   //text();
   //text();
   }

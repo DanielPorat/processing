@@ -2,6 +2,7 @@
 int Warrior = 0;
 int WarriorSpeed = 5;
 String WarriorName = "Warrior";
+//int WarriorDeadBand = 
 
 int Wizard = 1;
 int WizardSpeed = 2;

@@ -2,12 +2,14 @@ class EnemyClass{
   float[] EnemysX;
   float[] EnemysY;
   float EnemySpeed;
+  
   CharacterClass MainCharacter;
    void setup() {
    MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName);
   }
   EnemyClass(float enemySpeed) {
     this.EnemySpeed = enemySpeed;
+
   } 
   void draw() {
     float CharacterX = MainCharacter.X;
@@ -24,8 +26,8 @@ class EnemyClass{
         text(MainCharacter.X,1000,1000);
         
     for(int P = 0; P < EnemyCap-1; P++ ) {
-      float RandomX = random(CharacterX,1700);
-      float RandomY = random(CharacterY,1000);
+      float RandomX = random(CharacterX+100,1700);
+      float RandomY = random(CharacterY+100,1000);
       EnemysX[P] = RandomX;
       EnemysY[P] = RandomY;
       rect(RandomX,RandomY,100,100);
@@ -42,22 +44,43 @@ class EnemyClass{
   
   void Movement(float CharacterX, float CharacterY) {
     
+    
      for(int P = 0; P < EnemysX.length; P++ ) {
-       if(0 >= (EnemysX[P] - CharacterX)) {
-         EnemysX[P] += EnemySpeed;
+       float rise = EnemysY[P] - CharacterY;
+       float run = EnemysX[P] - CharacterX;
+       float RatioY = run/rise;
+       float TotalDistance = (rise * rise) + run * run;
+       float RealTotalDistance = sqrt(TotalDistance);
+       float ScaledDown = RealTotalDistance/EnemySpeed;
+       float RiseScaled = rise / ScaledDown;
+       float RunScaled = run / ScaledDown;
+       
+       
+       if(EnemysX[P]-50 <= CharacterX && (EnemysX[P]+50 >= CharacterX) && (EnemysY[P]-50 <= CharacterY && (EnemysY[P]+50 >= CharacterY))) {
+           ScreenChoice = Start_Screen;
        }
-       else {
-        EnemysX[P] -= EnemySpeed;
-       }
-         if(0 >= (EnemysY[P] - CharacterY)) {
-         EnemysY[P] += EnemySpeed;
-       }
-       else {
-        EnemysY[P] -= EnemySpeed;
-       }
-       if(EnemysX[P]-10 >= CharacterX && (EnemysX[P]+10 <= CharacterX) || EnemysY[P]-10 >= CharacterY && (EnemysY[P]+10 <= CharacterY)) {
-         ScreenChoice = Start_Screen;
-       }
+       else{
+       EnemysX[P] -= RunScaled;
+       EnemysY[P] -= RiseScaled;
+       //      if(0 >= (EnemysX[P] - CharacterX)) {
+       //  EnemysX[P] += RiseScaled;
+       //}
+       //else {
+       // EnemysX[P] -= RiseScaled;
+       //}
+       //  if(0 >= (EnemysY[P] - CharacterY)) {
+       //  EnemysY[P] += RunScaled;
+       //}
+       //else {
+       // EnemysY[P] -= RunScaled;
+       //}
+ 
+
+       
+       
+     //  if(EnemysX[P]-10 >= CharacterX && (EnemysX[P]+10 <= CharacterX) || EnemysY[P]-10 >= CharacterY && (EnemysY[P]+10 <= CharacterY)) {
+     //    ScreenChoice = Start_Screen;
+     //  }
    
       rect(EnemysX[P],EnemysY[P],100,100);
   }
@@ -65,4 +88,5 @@ class EnemyClass{
     
   
   }
+}
 }

@@ -62,49 +62,48 @@ class CharacterClass{
     stroke(0);
     fill(127);
     ellipse(X,Y,64,64);  
-    rect(X,Y+75,100,100);
+    rect(X,Y+75,75,75);
   }
   void displayKing() {
     stroke(0);
     fill(127);
     ellipse(X,Y,64,64);
-    ellipse(X,Y,11,64); 
-    ellipse(X,Y,64,64); 
+    ellipse(X+60,Y+75,11,64); 
+    ellipse(X+60,Y+75,11,64); 
     rect(X,Y+75,100,100);
   }
   void displayWizard() {
      stroke(0);
     fill(127);
     ellipse(X,Y,64,64);
-    ellipse(X,Y,11,64); 
-    ellipse(X,Y,64,64); 
-    rect(X,Y+75,500,500);
+   CreateHands();
+    rect(X,Y+75,75,75);
   }
   void displayDarkOverLord() {
      stroke(0);
     fill(127);
     ellipse(X,Y,64,64);
-    ellipse(X,Y,11,64); 
-    ellipse(X,Y,64,64); 
+  CreateHands();
     rect(X,Y+75,100,100);
   }
   void displayElf() {
      stroke(0);
     fill(127);
     ellipse(X,Y,64,64);
-    ellipse(X,Y,11,64); 
-    ellipse(X,Y,64,64); 
-    rect(X,Y+75,150,150);
+     CreateHands(); 
+    rect(X,Y+75,86,136);
   }
   void displayAssassin() {
      stroke(0);
     fill(127);
     ellipse(X,Y,64,64);
-    ellipse(X,Y,11,64); 
-    ellipse(X,Y,64,64); 
-    rect(X,Y+75,200,200);
+     CreateHands();
+    rect(X,Y+75,50,136);
   }
-
+  void CreateHands() {
+    ellipse(X+60,Y+75,11,64); 
+    ellipse(X+60,Y+75,11,64); 
+  }
   void keyPressed() {
     if(keyCode == LEFT){
        if(X >= 20) {
