@@ -6,12 +6,7 @@
  int TextOfset = 35; //how much I got to minus text to make it centered  
 int ScreenChoice = 0;
 int choosengun = 0;
-int Pistol = 1;
-int Shotgun = 2;
-int Sniper = 3;
-int Machine_gun = 4;
-int RailGun = 5;
-int Rocket_Luncher = 6;
+
 int nogun = 0;
 int simga = 1; 
 int Gameplay = 2;
@@ -66,10 +61,11 @@ void draw() {
      text("Example",1180, 750);
       fill(100,255,255);
       text("Back",45,23);
-     
+     //TODO add text for each button 
        
        
   }
+  //TODO add a third screen this could be you for anything you want movement buying anything this is for later though
 
 
 
@@ -89,8 +85,10 @@ void mousePressed() {
   IfmousePressed(1150, 1250, 700, 800,Gameplay, nogun); 
 
   
-
+//ToDo make a button for each Character
 }
+//TODO their is a problem here when being in the last stage and picking your Character the ifMousePressed still exist so you can press it even though it shouldn't exist
+//a way to do this is add another paramater which limits the stage to only that level,  Iwont tell you extacly how to do  it but it revolves around using an If statment and making the funcion work only if you are at that level
 void IfmousePressed(int MinX,int MaxX,int MinY, int MaxY,int screenStage,int gun) { //It takes 5 values 
   if(mouseX > MinX && mouseX < MaxX && (mouseY > MinY && mouseY < MaxY)) {
     ScreenChoice = screenStage; 
