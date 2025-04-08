@@ -66,7 +66,8 @@ void draw() {
        
   }
   //TODO add a third screen this could be you for anything you want movement buying anything this is for later though
-
+  if(ScreenChoice == Gameplay){
+  }
 
 
 
@@ -74,15 +75,16 @@ void draw() {
   text(mouseY, 200, 200);
 }
 void mousePressed() {
+    
 
-  IfmousePressed(150,250,650,750,CharacterSelectionScreen,Pistol); //this Reads the mouse X and Y pos and Changes the Screen State, Values You gave is MinX MaxX MinY MaxY and wanted Screen stage
-  IfmousePressed(450,550,650,750,CharacterSelectionScreen,Shotgun);
-  IfmousePressed(750,850,650,750,CharacterSelectionScreen,Sniper);
-  IfmousePressed(1050,1150,650,750,CharacterSelectionScreen,Machine_gun);
-  IfmousePressed(1350,1450,650,750,CharacterSelectionScreen,RailGun);
-  IfmousePressed(1650,1750,650,750,CharacterSelectionScreen,Rocket_Luncher);
-  IfmousePressed(10, 110 , 10, 30,Start_Screen,nogun);
-  IfmousePressed(1150, 1250, 700, 800,Gameplay, nogun); 
+  if(ScreenChoice == Start_Screen) IfmousePressed(150,250,650,750,CharacterSelectionScreen,Pistol);//this Reads the mouse X and Y pos and Changes the Screen State, Values You gave is MinX MaxX MinY MaxY and wanted Screen stage
+  if(ScreenChoice == Start_Screen)IfmousePressed(450,550,650,750,CharacterSelectionScreen,Shotgun);
+  if(ScreenChoice == Start_Screen)IfmousePressed(750,850,650,750,CharacterSelectionScreen,Sniper);
+  if(ScreenChoice == Start_Screen)IfmousePressed(1050,1150,650,750,CharacterSelectionScreen,Machine_gun);
+  if(ScreenChoice == Start_Screen)IfmousePressed(1350,1450,650,750,CharacterSelectionScreen,RailGun);
+  if(ScreenChoice == Start_Screen)IfmousePressed(1650,1750,650,750,CharacterSelectionScreen,Rocket_Luncher);
+  if(ScreenChoice == CharacterSelectionScreen)IfmousePressed(10, 110 , 10, 30,Start_Screen,nogun);
+  if(ScreenChoice == CharacterSelectionScreen) IfmousePressed(1150, 1250, 700, 800,Gameplay, nogun); 
 
   
 //ToDo make a button for each Character
