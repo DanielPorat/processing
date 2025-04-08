@@ -1,27 +1,33 @@
 //*********************CHARCTER CONSTANTS*********************
 int Warrior = 0;
 int WarriorSpeed = 5;
+int WarriorHealth = 100;
 String WarriorName = "Warrior";
 //int WarriorDeadBand = 
 
 int Wizard = 1;
 int WizardSpeed = 2;
+int WizardHealth = 100;
 String WizardName = "Wizard";
 
 int King = 2;
 int KingSpeed = 4;
+int KingHealth = 100;
 String KingName = "King";
 
 int DarkOverLord = 3;
 int DarkOverLordSpeed = 10;
+int DarkOverLordHealth = 100;
 String DarkOverLordName = "DarkOverLord";
 
 int Elf = 4;
 int ElfSpeed = 11;
+int ElfHealth = 100;
 String ElfName = "Elf";
 
 int Assassin = 5;
 int AssassinSpeed = 20;
+int AssassinHealth = 100;
 String AssassinName = "Assassin";
 
 int StartingDefualtX = 500;
@@ -31,6 +37,7 @@ int DefultSpeed = 5;
 
 int choosenSpeed = 4;
 String choosenCharacterName = "";
+int ChoosenHealth;
 
 
 //****************************************WEAPON CONSTANTS************************************************
@@ -70,7 +77,15 @@ int Rocket_LauncherDamage = 50;
 int Rocket_LauncherRange = 200;
 String Rocket_LauncherGunName = "Rocket_Launcher";
 //****************************************ENEMIES******************************************
+int NoEnemy = -1;
+int defualtEnemy = 0;
+int EnemyDamage = 10;
+int MutantBat = 1; //High Health lower damage ***** goons later 
 
+//int  = 2;
+//int  = 3;
+//int  = 4;
+//int  = 5;
 
 //************************************MISC CONSTANTS ***********************************
 

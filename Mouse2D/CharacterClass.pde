@@ -3,14 +3,17 @@ class CharacterClass{
   float X;
   float Y;
   float choosenSpeed = 20;
+  int ChoosenHealth = 100;
   String Name;
-  CharacterClass(float speed,String name) {
+ 
+  CharacterClass(float speed,String name,int health) {
     this.choosenSpeed = speed;
     this.Name = name;
+    this.ChoosenHealth = health;
     
   }
   void setup() {
-   MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName);
+   MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName,ChoosenHealth);
   }
   //public float getX() {
   //  return(X);
@@ -23,33 +26,39 @@ class CharacterClass{
       displayWizard();
       choosenSpeed = WizardSpeed;
       choosenCharacterName = WizardName;
+      ChoosenHealth = WizardHealth;
       
   }
   else if(MainCharacter.Name == WarriorName) {
       displayWarrior();
       choosenSpeed = WarriorSpeed;
       choosenCharacterName = WarriorName;
+       ChoosenHealth = WarriorHealth;
       
   }
   else if(MainCharacter.Name == KingName) {
       displayKing();
       choosenSpeed = KingSpeed;
       choosenCharacterName = KingName;
+       ChoosenHealth = KingHealth;
   }
   else if(MainCharacter.Name == DarkOverLordName) {
       displayDarkOverLord();
       choosenSpeed = DarkOverLordSpeed;
       choosenCharacterName = DarkOverLordName;
+       ChoosenHealth = DarkOverLordHealth;
   }
   else if(MainCharacter.Name == ElfName) {
       displayElf();
       choosenSpeed = ElfSpeed;
       choosenCharacterName = ElfName;
+       ChoosenHealth = ElfHealth;
   }
   else if(MainCharacter.Name == AssassinName) {
       displayAssassin();
       choosenSpeed = AssassinSpeed;
       choosenCharacterName = AssassinName;
+       ChoosenHealth = AssassinHealth;
   }
 }
   

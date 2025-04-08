@@ -29,8 +29,8 @@ void setup() {
   rectMode(CENTER);
   textMode(CENTER);
   background(51);
-  MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName);
-  Enemies = new EnemyClass(1);
+   MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName,ChoosenHealth);
+  Enemies = new EnemyClass(1,0);
   
 }
 
@@ -72,9 +72,9 @@ void GameScreen() {
     
    }
    else{
-      MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName); 
+      MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName,ChoosenHealth); 
      NewWeapons = new Weapons(choosengunDamage,choosengunName, choosengunRange, choosengunId);
-      Enemies = new EnemyClass(1);
+      Enemies = new EnemyClass(1,0);
       enemiesSpawned = false;
      
    }

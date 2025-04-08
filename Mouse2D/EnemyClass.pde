@@ -1,24 +1,23 @@
 class EnemyClass{ 
   float[] EnemysX;
   float[] EnemysY;
+  int[] Enemies;
   float EnemySpeed;
-  
+  int EnemyId;
   CharacterClass MainCharacter;
    void setup() {
-   MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName);
+   MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName,ChoosenHealth);
   }
-  EnemyClass(float enemySpeed) {
+  EnemyClass(float enemySpeed,int enemyId) {
     this.EnemySpeed = enemySpeed;
+    this.EnemyId = enemyId;
 
   } 
-  void draw() {
-    float CharacterX = MainCharacter.X;
-     float CharacterY = MainCharacter.Y;
-    
-  }
+
   
   void SpawnEnemies(int frequency,int EnemyCap) {
-      MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName);
+      MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName,ChoosenHealth);
+      Enemies = new int[EnemyCap-1];
       EnemysX = new float[EnemyCap-1];
        EnemysY = new float[EnemyCap-1];
      float CharacterX = MainCharacter.X;
@@ -30,15 +29,21 @@ class EnemyClass{
       float RandomY = random(CharacterY+100,1000);
       EnemysX[P] = RandomX;
       EnemysY[P] = RandomY;
+      Enemies[P] = EnemyId;
       rect(RandomX,RandomY,100,100);
 
       delay(10);
       }
   }
+  void Spawn() {
+    
+  }
   void ReDraw() {
-    if (EnemysX == null || EnemysY == null) return;
+    if (EnemysX == null || EnemysY == null ) return;
     for(int P = 0; P < EnemysX.length; P++ ) {
-      rect(EnemysX[P],EnemysY[P],100,100);
+      if(Enemies[P] != -1) {
+        rect(EnemysX[P],EnemysY[P],100,100);
+      }
   }
   }
   
@@ -57,7 +62,9 @@ class EnemyClass{
        
        
        if(EnemysX[P]-75 <= CharacterX && (EnemysX[P]+75 >= CharacterX) && (EnemysY[P]-190 <= CharacterY && (EnemysY[P]+16 >= CharacterY))) {
-           ScreenChoice = Start_Screen;
+           ChoosenHealth -= EnemyDamage;
+           Enemies[P] = NoEnemy;
+           Enemies[P] = NoEnemy;
        }
        else{
        EnemysX[P] -= RunScaled - random(-0.1,-0.3);//Random is for more intresting movement
@@ -82,7 +89,7 @@ class EnemyClass{
      //    ScreenChoice = Start_Screen;
      //  }
    
-      rect(EnemysX[P],EnemysY[P],100,100);
+      ReDraw();
   }
     
     
