@@ -65,6 +65,9 @@ class EnemyClass{
            ChoosenHealth -= EnemyDamage;
            Enemies[P] = NoEnemy;
            Enemies[P] = NoEnemy;
+           if(ChoosenHealth <= 0) {
+             ScreenChoice = Start_Screen;
+           } 
        }
        else{
        EnemysX[P] -= RunScaled - random(-0.1,-0.3);//Random is for more intresting movement
