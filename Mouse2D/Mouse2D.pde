@@ -14,7 +14,7 @@ int RailGun = 5;
 int Rocket_Luncher = 6;
 int nogun = 0;
 int simga = 1; 
-
+int Gameplay = 2;
 
 final int Start_Screen = 0;
 final int CharacterSelectionScreen = 1;
@@ -60,6 +60,10 @@ void draw() {
      background(51);
      fill(255,100,100);
      rect(60, 20, 100, 20);
+     fill(100,255,255);
+     rect(1200,750, 100, 100);
+     fill(255,100,100);
+     text("Example",1180, 750);
       fill(100,255,255);
       text("Back",45,23);
      
@@ -82,7 +86,7 @@ void mousePressed() {
   IfmousePressed(1350,1450,650,750,CharacterSelectionScreen,RailGun);
   IfmousePressed(1650,1750,650,750,CharacterSelectionScreen,Rocket_Luncher);
   IfmousePressed(10, 110 , 10, 30,Start_Screen,nogun);
-  
+  IfmousePressed(1150, 1250, 700, 800,Gameplay, nogun); 
 
   
 
