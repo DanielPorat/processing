@@ -37,7 +37,7 @@ int DefultSpeed = 5;
 
 int choosenSpeed = 4;
 String choosenCharacterName = "";
-int ChoosenHealth;
+int ChoosenHealth = 100;
 
 
 //****************************************WEAPON CONSTANTS************************************************
@@ -78,10 +78,17 @@ int Rocket_LauncherRange = 200;
 String Rocket_LauncherGunName = "Rocket_Launcher";
 //****************************************ENEMIES******************************************
 int NoEnemy = -1;
-int defualtEnemy = 0;
-int EnemyDamage = 10;
-int MutantBat = 1; //High Health lower damage ***** goons later 
+int EnemyDamage = 5;
 
+int defualtEnemy = 0;
+int defualtEnemyDamage = 10;
+int defualEnemySpeed = 2;
+int defualtEnemyHealth = 75;
+
+int MutantBat = 1; //High Health lower damage ***** goons later 
+int MutantBatEnemyDamage = 20;
+int MutantBatEnemySpeed = 3;
+int MutantBatEnemyHealth = 25;
 //int  = 2;
 //int  = 3;
 //int  = 4;

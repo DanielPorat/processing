@@ -3,7 +3,7 @@ class CharacterClass{
   float X;
   float Y;
   float choosenSpeed = 20;
-  int ChoosenHealth = 100;
+  int ChoosenHealth;
   String Name;
  
   CharacterClass(float speed,String name,int health) {
@@ -13,7 +13,7 @@ class CharacterClass{
     
   }
   void setup() {
-   MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName,ChoosenHealth);
+   
   }
   //public float getX() {
   //  return(X);
@@ -21,44 +21,72 @@ class CharacterClass{
   //public float getY() {
   //  return(Y);
   //}
+  void CreateStats(){
+   if(MainCharacter.Name == WizardName) {
+      
+        choosenSpeed = WizardSpeed;
+        choosenCharacterName = WizardName;
+        ChoosenHealth = WizardHealth;
+        
+    }
+    else if(MainCharacter.Name == WarriorName) {
+     
+        choosenSpeed = WarriorSpeed;
+        choosenCharacterName = WarriorName;
+         ChoosenHealth = WarriorHealth;
+        
+    }
+    else if(MainCharacter.Name == KingName) {
+       
+        choosenSpeed = KingSpeed;
+        choosenCharacterName = KingName;
+         ChoosenHealth = KingHealth;
+    }
+    else if(MainCharacter.Name == DarkOverLordName) {
+        
+        choosenSpeed = DarkOverLordSpeed;
+        choosenCharacterName = DarkOverLordName;
+         ChoosenHealth = DarkOverLordHealth;
+    }
+    else if(MainCharacter.Name == ElfName) {
+        
+        choosenSpeed = ElfSpeed;
+        choosenCharacterName = ElfName;
+         ChoosenHealth = ElfHealth;
+    }
+    else if(MainCharacter.Name == AssassinName) {
+      
+        choosenSpeed = AssassinSpeed;
+        choosenCharacterName = AssassinName;
+         ChoosenHealth = AssassinHealth;
+    }
+  }
   void display() {
     if(MainCharacter.Name == WizardName) {
       displayWizard();
-      choosenSpeed = WizardSpeed;
-      choosenCharacterName = WizardName;
-      ChoosenHealth = WizardHealth;
+    
       
   }
   else if(MainCharacter.Name == WarriorName) {
       displayWarrior();
-      choosenSpeed = WarriorSpeed;
-      choosenCharacterName = WarriorName;
-       ChoosenHealth = WarriorHealth;
+      
       
   }
   else if(MainCharacter.Name == KingName) {
       displayKing();
-      choosenSpeed = KingSpeed;
-      choosenCharacterName = KingName;
-       ChoosenHealth = KingHealth;
+     
   }
   else if(MainCharacter.Name == DarkOverLordName) {
       displayDarkOverLord();
-      choosenSpeed = DarkOverLordSpeed;
-      choosenCharacterName = DarkOverLordName;
-       ChoosenHealth = DarkOverLordHealth;
+     
   }
   else if(MainCharacter.Name == ElfName) {
       displayElf();
-      choosenSpeed = ElfSpeed;
-      choosenCharacterName = ElfName;
-       ChoosenHealth = ElfHealth;
+     
   }
   else if(MainCharacter.Name == AssassinName) {
       displayAssassin();
-      choosenSpeed = AssassinSpeed;
-      choosenCharacterName = AssassinName;
-       ChoosenHealth = AssassinHealth;
+    
   }
 }
   

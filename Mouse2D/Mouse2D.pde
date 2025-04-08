@@ -29,8 +29,8 @@ void setup() {
   rectMode(CENTER);
   textMode(CENTER);
   background(51);
-   MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName,ChoosenHealth);
-  Enemies = new EnemyClass(1,0);
+ MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName,ChoosenHealth);
+  Enemies = new EnemyClass(1,10);
   
 }
 
@@ -50,22 +50,30 @@ void draw() {
     text(mouseX, 300, 300);
   text(mouseY, 200, 200);
 }
+void ShowHealthBar(int ChoosenHealth) {
+  fill(255,0,0);
+  rect(100,1000,ChoosenHealth,50);
+   fill(0,0,20);
+  text("HEALTH",75,1000);
+  fill(100,29,70);
+}
 void GameScreen() {
   
    if(ScreenChoice == GameScreen) {
-  
+    
      NewWeapons.PickWeapon(choosengunId);
         if (!enemiesSpawned) {
       Enemies.SpawnEnemies(1, 10);
       enemiesSpawned = true; 
     }
      Enemies.ReDraw();
+    
      Enemies.Movement(MainCharacter.X,MainCharacter.Y);
- 
+      MainCharacter.CreateStats();
      MainCharacter.display();
      MainCharacter.keyPressed();
-   
-    
+
+     ShowHealthBar(ChoosenHealth);
      text(NewWeapons.Name,100,100);
      text(MainCharacter.X,500,500);
      text(MainCharacter.Y,700,700);
@@ -74,8 +82,10 @@ void GameScreen() {
    else{
       MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName,ChoosenHealth); 
      NewWeapons = new Weapons(choosengunDamage,choosengunName, choosengunRange, choosengunId);
-      Enemies = new EnemyClass(1,0);
+      Enemies = new EnemyClass(1,10);
       enemiesSpawned = false;
+      MainCharacter.CreateStats();
+         
      
    }
 }
@@ -167,6 +177,7 @@ void IfmousePressed(int MinX,int MaxX,int MinY, int MaxY,int screenStage,int gun
     ScreenChoice = screenStage; 
     choosengunId = gunId;
     choosenCharacterName = CharacterName; 
+     MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName,ChoosenHealth); 
     
     }
 }
