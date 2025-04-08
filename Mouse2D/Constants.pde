@@ -69,6 +69,7 @@ int Rocket_LauncherId = 6;
 int Rocket_LauncherDamage = 50;
 int Rocket_LauncherRange = 200;
 String Rocket_LauncherGunName = "Rocket_Launcher";
+//****************************************ENEMIES******************************************
 
 
 //************************************MISC CONSTANTS ***********************************
