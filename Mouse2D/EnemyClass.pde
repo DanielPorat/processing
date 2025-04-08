@@ -56,12 +56,12 @@ class EnemyClass{
        float RunScaled = run / ScaledDown;
        
        
-       if(EnemysX[P]-50 <= CharacterX && (EnemysX[P]+50 >= CharacterX) && (EnemysY[P]-50 <= CharacterY && (EnemysY[P]+50 >= CharacterY))) {
+       if(EnemysX[P]-75 <= CharacterX && (EnemysX[P]+75 >= CharacterX) && (EnemysY[P]-190 <= CharacterY && (EnemysY[P]+16 >= CharacterY))) {
            ScreenChoice = Start_Screen;
        }
        else{
-       EnemysX[P] -= RunScaled;
-       EnemysY[P] -= RiseScaled;
+       EnemysX[P] -= RunScaled - random(-0.1,-0.3);//Random is for more intresting movement
+       EnemysY[P] -= RiseScaled - random(-0.1,-0.3);
        //      if(0 >= (EnemysX[P] - CharacterX)) {
        //  EnemysX[P] += RiseScaled;
        //}

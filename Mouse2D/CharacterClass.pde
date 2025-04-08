@@ -62,47 +62,55 @@ class CharacterClass{
     stroke(0);
     fill(127);
     ellipse(X,Y,64,64);  
-    rect(X,Y+75,75,75);
+ CreateBodyParts(25,120,50,50);
+   rect(X,Y+75,86,136,100);
   }
   void displayKing() {
     stroke(0);
     fill(127);
     ellipse(X,Y,64,64);
-    ellipse(X+60,Y+75,11,64); 
-    ellipse(X+60,Y+75,11,64); 
-    rect(X,Y+75,100,100);
+ CreateBodyParts(25,120,50,50);
+   rect(X,Y+75,86,136,100);
   }
   void displayWizard() {
      stroke(0);
     fill(127);
     ellipse(X,Y,64,64);
-   CreateHands();
-    rect(X,Y+75,75,75);
+ CreateBodyParts(25,120,50,50);
+   rect(X,Y+75,86,136,100);
   }
   void displayDarkOverLord() {
      stroke(0);
     fill(127);
     ellipse(X,Y,64,64);
-  CreateHands();
-    rect(X,Y+75,100,100);
+ CreateBodyParts(25,120,50,50);
+   rect(X,Y+75,86,136,100);
   }
   void displayElf() {
      stroke(0);
     fill(127);
     ellipse(X,Y,64,64);
-     CreateHands(); 
-    rect(X,Y+75,86,136);
+ CreateBodyParts(25,120,50,50);
+   rect(X,Y+75,86,136,100);
   }
   void displayAssassin() {
      stroke(0);
     fill(127);
     ellipse(X,Y,64,64);
-     CreateHands();
-    rect(X,Y+75,50,136);
+   CreateBodyParts(25,120,50,50);
+   rect(X,Y+75,86,136,100);
   }
-  void CreateHands() {
-    ellipse(X+60,Y+75,11,64); 
-    ellipse(X+60,Y+75,11,64); 
+  void CreateBodyParts(int LegsXOffset, int LegsYOffset,int HandsXOffset, int HandsYOffset) {
+    CreateLegs(LegsXOffset,LegsYOffset);
+    CreateHands(HandsXOffset,HandsYOffset);
+  }
+  void CreateHands(int XOffset, int YOffset) {
+    ellipse(X-XOffset,Y+YOffset,25,64); 
+    ellipse(X+XOffset,Y+YOffset,25,64); 
+  }
+    void CreateLegs(int XOffset, int YOffset) {
+    ellipse(X-XOffset,Y+YOffset,25,64); 
+    ellipse(X+XOffset,Y+YOffset,25,64); 
   }
   void keyPressed() {
     if(keyCode == LEFT){

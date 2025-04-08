@@ -74,7 +74,7 @@ void GameScreen() {
    else{
       MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName); 
      NewWeapons = new Weapons(choosengunDamage,choosengunName, choosengunRange, choosengunId);
-      Enemies = new EnemyClass(5);
+      Enemies = new EnemyClass(1);
       enemiesSpawned = false;
      
    }

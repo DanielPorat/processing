@@ -13,6 +13,12 @@ class Weapons {
         this.Range = range;
         this.ID = id;
     }
+    //void Shooting() {
+    //     if (key == 'b' || key == 'B') {
+           
+    //    }
+    //}
+    //void Bullets
     void PickWeapon(int id) {
       if(id == PistolId) {
          Weapons Pistol = new Weapons(PistolDamage, PistolName, PistolRange,PistolId);
