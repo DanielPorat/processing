@@ -1,66 +1,110 @@
 class Weapons {
+    float StartBulletsX;
+    float StartBulletsY;
+    float[] BulletsX;
+    float[] BulletsY;
     int Damage;
     String Name;
     int Range;
     int ID;
+   int BulletAmount;
+   int BulletSpeed;
+    int BulletAmounts;
+     int BulletLimit;
+     float MovedStartBulletsX = 0;
+     CharacterClass MainCharacter;
     void setup() {
-       NewWeapons = new Weapons(PistolDamage,"Pistol", PistolRange, PistolId);
-    }
+       PickWeapon(choosengunId);
+      
+       MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName,ChoosenHealth);
+     
+       
+  }
+    
     // Constructor
-    Weapons(int damage, String name, int range, int id) {
+    Weapons(int damage, String name, int range, int id,int bulletlimit, int bulletSpeed) {
         this.Damage = damage;
         this.Name = name;
         this.Range = range;
         this.ID = id;
+        this.BulletLimit = bulletlimit;
+        this.BulletSpeed = bulletSpeed;
     }
-    //void Shooting() {
-    //     if (key == 'b' || key == 'B') {
-           
-    //    }
-    //}
-    //void Bullets
+ 
+    void Movement(){
+      
+      MovedStartBulletsX-=choosengunSpeed;
+      
+    }
+    void Bullets(float CharacterX, float CharacterY) {
+         if (key == 'b' || key == 'B' && (BulletAmounts <= choosengunBulletLimit)) {
+        StartBulletsX = CharacterX;
+        StartBulletsY = CharacterY;
+        MovedStartBulletsX = 0;
+         }
+        Movement();
+        
+        
+        rect(StartBulletsX+120-MovedStartBulletsX,StartBulletsY+25,20,10);
+        
+    }
+    
     void PickWeapon(int id) {
       if(id == PistolId) {
-         Weapons Pistol = new Weapons(PistolDamage, PistolName, PistolRange,PistolId);
+         Weapons Weapon = new Weapons(PistolDamage, PistolName, PistolRange,PistolId,PistolBulletLimit,PistolSpeed);
           choosengunDamage = PistolDamage;
          choosengunName = PistolName;
          choosengunRange =  PistolRange;
         choosengunId =  PistolId;
+            choosengunBulletLimit = PistolBulletLimit;
+                 choosengunSpeed = PistolSpeed;
+       
+
       }
       else if(id == ShotgunId) {
-          Weapons Shotgun = new Weapons(ShotgunDamage, ShotgunName, ShotgunRange,ShotgunId);
+          Weapons Weapon = new Weapons(ShotgunDamage, ShotgunName, ShotgunRange,ShotgunId,ShotgunBulletLimit,ShotgunNameSpeed);
            choosengunDamage = ShotgunDamage;
          choosengunName = ShotgunName;
          choosengunRange =  ShotgunRange;
         choosengunId =  ShotgunId;
+            choosengunBulletLimit = ShotgunBulletLimit;
+               choosengunSpeed = ShotgunNameSpeed;
       }
       else if(id == SniperId) {
-          Weapons Sniper = new Weapons(SniperDamage, SnipergunName, SniperRange,SniperId);
+          Weapons Weapon = new Weapons(SniperDamage, SnipergunName, SniperRange,SniperId,SniperBulletLimit,SnipergunSpeed);
            choosengunDamage = SniperDamage;
          choosengunName = SnipergunName;
          choosengunRange =  SniperRange;
         choosengunId =  SniperId;
+            choosengunBulletLimit = SniperBulletLimit;
+              choosengunSpeed = SnipergunSpeed;
       }
       else if(id == Machine_gunId) {
-         Weapons Machine_gun = new Weapons(Machine_gunDamage, Machine_gunName, Machine_gunRange,Machine_gunId);
+         Weapons Weapon = new Weapons(Machine_gunDamage, Machine_gunName, Machine_gunRange,Machine_gunId,Machine_gunBulletLimit,Machine_gunSpeed);
           choosengunDamage = Machine_gunDamage;
          choosengunName = Machine_gunName;
          choosengunRange =  Machine_gunRange;
         choosengunId =  Machine_gunId;
+            choosengunBulletLimit = Machine_gunBulletLimit;
+               choosengunSpeed = Machine_gunSpeed;
       }
      else if(id == RailGunId) {
-         Weapons RailGun = new Weapons(RailGunDamage, RailGunName, RailGunRange,RailGunId);
+         Weapons Weapon = new Weapons(RailGunDamage, RailGunName, RailGunRange,RailGunId,RailGunBulletLimit,RailGunSpeed);
           choosengunDamage = RailGunDamage;
          choosengunName = RailGunName;
          choosengunRange =  RailGunRange;
         choosengunId =  RailGunId;
+        choosengunBulletLimit = RailGunBulletLimit;
+        choosengunSpeed = RailGunSpeed; 
       }
      else if(id == Rocket_LauncherId) {
-         Weapons Rocket_Launcher = new Weapons(Rocket_LauncherDamage, Rocket_LauncherGunName, Rocket_LauncherRange,Rocket_LauncherId);
+         Weapons Weapon = new Weapons(Rocket_LauncherDamage, Rocket_LauncherGunName, Rocket_LauncherRange,Rocket_LauncherId,Rocket_LuncherBulletLimit,Rocket_LauncherSpeed);
           choosengunDamage = Rocket_LauncherDamage;
          choosengunName = Rocket_LauncherGunName;
          choosengunRange =  Rocket_LauncherRange;
         choosengunId =  Rocket_LauncherId;
+         choosengunBulletLimit = Rocket_LuncherBulletLimit;
+          choosengunSpeed = Rocket_LauncherSpeed;  
      }
     }
 }

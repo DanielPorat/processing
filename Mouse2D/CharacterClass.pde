@@ -5,7 +5,7 @@ class CharacterClass{
   float choosenSpeed = 20;
   int ChoosenHealth;
   String Name;
- 
+
   CharacterClass(float speed,String name,int health) {
     this.choosenSpeed = speed;
     this.Name = name;
@@ -140,6 +140,7 @@ class CharacterClass{
   void CreateBodyParts(int LegsXOffset, int LegsYOffset,int HandsXOffset, int HandsYOffset) {
     CreateLegs(LegsXOffset,LegsYOffset);
     CreateHands(HandsXOffset,HandsYOffset);
+    CreateGunPistol(HandsXOffset,HandsYOffset);
   }
   void CreateHands(int XOffset, int YOffset) {
     ellipse(X-XOffset,Y+YOffset,25,64); 
@@ -148,6 +149,10 @@ class CharacterClass{
     void CreateLegs(int XOffset, int YOffset) {
     ellipse(X-XOffset,Y+YOffset,25,64); 
     ellipse(X+XOffset,Y+YOffset,25,64); 
+  }
+  void CreateGunPistol(int XOffset, int YOffset) {
+    rect(X+XOffset,Y+YOffset,25,50);
+    rect(X+XOffset+20,Y+YOffset-20,60,25);
   }
   void keyPressed() {
     if(keyCode == LEFT){

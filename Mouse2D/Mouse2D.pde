@@ -42,7 +42,7 @@ void draw() {
   Start_screen();
   CharacterSelectionScreen();
   GameScreen();
-   
+  
 
 
 
@@ -60,14 +60,17 @@ void ShowHealthBar(int ChoosenHealth) {
 void GameScreen() {
   
    if(ScreenChoice == GameScreen) {
-    
+     
      NewWeapons.PickWeapon(choosengunId);
+
         if (!enemiesSpawned) {
       Enemies.SpawnEnemies(1, 10);
       enemiesSpawned = true; 
     }
      Enemies.ReDraw();
-    
+     if(NewWeapons.BulletAmount <= choosengunBulletLimit) {
+     NewWeapons.Bullets(MainCharacter.X,MainCharacter.Y);
+     }
      Enemies.Movement(MainCharacter.X,MainCharacter.Y);
       MainCharacter.CreateStats();
      MainCharacter.display();
@@ -77,13 +80,14 @@ void GameScreen() {
      text(NewWeapons.Name,100,100);
      text(MainCharacter.X,500,500);
      text(MainCharacter.Y,700,700);
-    
+     text(choosengunBulletLimit,10,10);
    }
    else{
       MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName,ChoosenHealth); 
-     NewWeapons = new Weapons(choosengunDamage,choosengunName, choosengunRange, choosengunId);
+     NewWeapons = new Weapons(choosengunDamage,choosengunName, choosengunRange, choosengunId,choosengunBulletLimit,choosengunSpeed);
       Enemies = new EnemyClass(1,10);
       enemiesSpawned = false;
+      text(choosengunBulletLimit,10,10);
       MainCharacter.CreateStats();
          
      

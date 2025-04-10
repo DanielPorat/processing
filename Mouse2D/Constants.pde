@@ -35,46 +35,60 @@ final int StartingDefualtY = 250;
 
 final int DefultSpeed = 5;
 
-final int choosenSpeed = 4;
-final String choosenCharacterName = "";
-final int ChoosenHealth = 100;
+ int choosenSpeed = 4;
+ String choosenCharacterName = "";
+ int ChoosenHealth = 100;
 
 
 //****************************************WEAPON CONSTANTS************************************************
-final int choosengunId = 0;
-final int choosengunDamage = 0;
-final int choosengunRange = 0;
-final String choosengunName = "";
+ int choosengunId = 0;
+ int choosengunDamage = 0;
+ int choosengunRange = 0;
+ int choosengunSpeed = 2;
+  int choosengunBulletLimit = 2;
+ String choosengunName = "";
 
 
 final int PistolId = 1;
 final int PistolDamage = 10;
 final int PistolRange = 100;
+final int PistolSpeed = 5;
+final int PistolBulletLimit = 1;
 final String PistolName = "Pistol";
 
 final int ShotgunId = 2;
 final int ShotgunDamage = 25;
 final int ShotgunRange = 50;
+final int ShotgunNameSpeed = 5;
+final int ShotgunBulletLimit = 1;
 final String ShotgunName = "Shotgun";
 
 final int SniperId = 3;
 final int SniperDamage = 25;
 final int SniperRange = 50;
+final int SnipergunSpeed = 5;
+final int SniperBulletLimit = 1;
 final String SnipergunName = "Sniper";
 
 final int Machine_gunId = 4;
 final int Machine_gunDamage = 5;
 final int Machine_gunRange = 125;
+final int Machine_gunSpeed = 5;
+final int Machine_gunBulletLimit = 1;
 final String Machine_gunName = "Machine_gun";
 
 final int RailGunId = 5;
 final int RailGunDamage = 25;
 final int RailGunRange = 50;
+final int RailGunSpeed = 5;
+final int RailGunBulletLimit = 1;
 final String RailGunName = "RailGun";
 
 final int Rocket_LauncherId = 6;
 final int Rocket_LauncherDamage = 50;
 final int Rocket_LauncherRange = 200;
+final int Rocket_LauncherSpeed = 5;
+final int Rocket_LuncherBulletLimit = 1;
 final String Rocket_LauncherGunName = "Rocket_Launcher";
 //****************************************ENEMIES******************************************
 final int NoEnemy = -1;
