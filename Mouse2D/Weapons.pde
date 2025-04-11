@@ -33,16 +33,17 @@ class Weapons {
     }
  
     void Movement(){
-      
+        int orgianlBulletAmount = BulletAmounts;
         for(int P = 0; P <= choosengunBulletLimit; P++) { 
            //if(BulletsX[P] != null ) {
               BulletsX[P] += choosengunSpeed;
              DrawBullets( BulletsX[P],BulletsY[P]);
+              
               if(BulletsX[P] - choosengunRange  >= StartBulletsX[P]) {
                 BulletsX[P] = -10000;
-                
+                if(orgianlBulletAmount > BulletAmounts ){
                 BulletAmounts--;
-              
+                }
               }
               //}
         }
@@ -56,22 +57,25 @@ class Weapons {
       
     }
     void Bullets(float CharacterX, float CharacterY) {
-      if(BulletsCreated == false ) {
+      if(BulletsCreated == false || BulletAmount == 0) {
          BulletsX = new float[choosengunBulletLimit+1];
                  BulletsY = new float[choosengunBulletLimit+1];
                StartBulletsX = new float[choosengunBulletLimit+1];
                StartBulletsY = new float[choosengunBulletLimit+1];
           BulletsCreated = true;
+          BulletAmount++;
       }
-         if (key == 'b' || key == 'B' && (BulletAmounts <= choosengunBulletLimit)) {
+         if (key == 'b' || key == 'B' /*&& (BulletAmounts <= choosengunBulletLimit)*/) {
+              if((BulletAmounts < choosengunBulletLimit)) {
+              //for(int P = 0; P <= choosengunBulletLimit; P++) { 
+              BulletsX[BulletAmounts] = CharacterX;
+              BulletsY[BulletAmounts] = CharacterY;
+              StartBulletsX[BulletAmounts] = CharacterX;
+              StartBulletsY[BulletAmounts] = CharacterY;
             
-              for(int P = 0; P <= choosengunBulletLimit; P++) { 
-              BulletsX[P] = CharacterX;
-              BulletsY[P] = CharacterY;
-              StartBulletsX[P] = CharacterX;
-              StartBulletsY[P] = CharacterY;
-              BulletAmounts++;
-                DrawBullets(BulletsX[P], BulletsY[P]);
+               DrawBullets(BulletsX[BulletAmounts], BulletsY[BulletAmounts]);
+               BulletAmounts++;
+              }
               
                    
               }
@@ -82,7 +86,7 @@ class Weapons {
         
 
         
-    }
+    
     
     void PickWeapon(int id) {
       if(id == PistolId) {

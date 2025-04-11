@@ -53,14 +53,14 @@ final int PistolId = 1;
 final int PistolDamage = 10;
 final int PistolRange = 500;
 final int PistolSpeed = 5;
-final int PistolBulletLimit = 1;
+final int PistolBulletLimit = 5;
 final String PistolName = "Pistol";
 
 final int ShotgunId = 2;
 final int ShotgunDamage = 25;
 final int ShotgunRange = 200;
 final int ShotgunNameSpeed = 5;
-final int ShotgunBulletLimit = 1;
+final int ShotgunBulletLimit = 10;
 final String ShotgunName = "Shotgun";
 
 final int SniperId = 3;
@@ -74,7 +74,7 @@ final int Machine_gunId = 4;
 final int Machine_gunDamage = 5;
 final int Machine_gunRange = 125;
 final int Machine_gunSpeed = 5;
-final int Machine_gunBulletLimit = 1;
+final int Machine_gunBulletLimit = 5;
 final String Machine_gunName = "Machine_gun";
 
 final int RailGunId = 5;
