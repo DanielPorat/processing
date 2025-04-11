@@ -68,9 +68,9 @@ void GameScreen() {
       enemiesSpawned = true; 
     }
      Enemies.ReDraw();
-     if(NewWeapons.BulletAmount <= choosengunBulletLimit) {
+       MainCharacter.keyPressed();
      NewWeapons.Bullets(MainCharacter.X,MainCharacter.Y);
-     }
+    NewWeapons.Movement();
      Enemies.Movement(MainCharacter.X,MainCharacter.Y);
       MainCharacter.CreateStats();
      MainCharacter.display();

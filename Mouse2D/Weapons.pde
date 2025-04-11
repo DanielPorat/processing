@@ -1,6 +1,6 @@
 class Weapons {
-    float StartBulletsX;
-    float StartBulletsY;
+    float[] StartBulletsX;
+    float[] StartBulletsY;
     float[] BulletsX;
     float[] BulletsY;
     int Damage;
@@ -11,11 +11,12 @@ class Weapons {
    int BulletSpeed;
     int BulletAmounts;
      int BulletLimit;
+    boolean BulletsCreated = false;
      float MovedStartBulletsX = 0;
      CharacterClass MainCharacter;
     void setup() {
        PickWeapon(choosengunId);
-      
+     
        MainCharacter = new CharacterClass(choosenSpeed,choosenCharacterName,ChoosenHealth);
      
        
@@ -33,19 +34,53 @@ class Weapons {
  
     void Movement(){
       
-      MovedStartBulletsX-=choosengunSpeed;
+        for(int P = 0; P <= choosengunBulletLimit; P++) { 
+           //if(BulletsX[P] != null ) {
+              BulletsX[P] += choosengunSpeed;
+             DrawBullets( BulletsX[P],BulletsY[P]);
+              if(BulletsX[P] - choosengunRange  >= StartBulletsX[P]) {
+                BulletsX[P] = -10000;
+                
+                BulletAmounts--;
+              
+              }
+              //}
+        }
+    
+      
+    }
+    void DrawBullets(float bulletX, float bulletY) {
+        rect(int(bulletX+120),int(bulletY+25),20,10);
+        
+              
       
     }
     void Bullets(float CharacterX, float CharacterY) {
+      if(BulletsCreated == false ) {
+         BulletsX = new float[choosengunBulletLimit+1];
+                 BulletsY = new float[choosengunBulletLimit+1];
+               StartBulletsX = new float[choosengunBulletLimit+1];
+               StartBulletsY = new float[choosengunBulletLimit+1];
+          BulletsCreated = true;
+      }
          if (key == 'b' || key == 'B' && (BulletAmounts <= choosengunBulletLimit)) {
-        StartBulletsX = CharacterX;
-        StartBulletsY = CharacterY;
-        MovedStartBulletsX = 0;
+            
+              for(int P = 0; P <= choosengunBulletLimit; P++) { 
+              BulletsX[P] = CharacterX;
+              BulletsY[P] = CharacterY;
+              StartBulletsX[P] = CharacterX;
+              StartBulletsY[P] = CharacterY;
+              BulletAmounts++;
+                DrawBullets(BulletsX[P], BulletsY[P]);
+              
+                   
+              }
+   
+         
          }
-        Movement();
         
         
-        rect(StartBulletsX+120-MovedStartBulletsX,StartBulletsY+25,20,10);
+
         
     }
     
